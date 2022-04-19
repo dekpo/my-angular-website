@@ -1,15 +1,40 @@
 <section class="container-fluid">
     <div class="row">
         <div class="col">
-            <h2>Home</h2>
+            <h2>{{title}}</h2>
         </div>
     </div>
     <div class="row">
         <div class="col-12 col-md-6">
-            <img src="https://cdn.pixabay.com/photo/2015/12/04/14/05/code-1076536_960_720.jpg" alt="Page de code" class="img-fluid">
+            <img [src]=" 'assets/images/' + sourceImg " [alt]="title" class="img-fluid" (click)="changeImage()">
         </div>
         <div class="col-12 col-md-6">
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nam eveniet unde beatae, ab ducimus neque libero. Magni consequatur est voluptate ad eos repellendus quisquam atque, rerum non deleniti ut beatae eum iure laudantium eaque. Modi quas illo iusto eaque hic similique exercitationem nisi facilis ea vel aliquam ut reiciendis, sunt quisquam repudiandae laudantium odit nam quaerat? Ullam hic neque atque, suscipit aliquam fugiat est animi nemo perspiciatis molestiae porro! Ipsam cupiditate reprehenderit voluptatem doloribus eveniet, ullam incidunt. Nam excepturi ratione, mollitia beatae porro enim cumque dolorum repellat reprehenderit, eius laudantium harum, consequatur nobis voluptatibus quam facilis incidunt voluptates ipsam culpa obcaecati dolorem nulla. Aliquam pariatur neque illo ad suscipit soluta deleniti tempora harum. Voluptatibus maiores laborum accusamus reiciendis officia dolorum eos error dignissimos iusto.</p>
+
+            <p *ngIf="2 < 1; else otherParag">
+                CECI EST AFFICHE SOUS CONDITION
+            </p>
+
+            <ng-template #otherParag>
+                <p>MON AUTRE PARAGRAPHE</p>
+            </ng-template>
+
+            <div [ngSwitch]="2">
+                <p *ngSwitchCase="1">C'est 1 le case</p>
+                <p *ngSwitchCase="2">C'est 2 le case</p>
+                <p *ngSwitchCase="3">C'est 3 le case</p>
+            </div>
+
+            <ol>
+                <li *ngFor="let img of jsonImg">
+                   <img width="50" [src]=" 'assets/images/' + img.url " [alt]="img.alt">
+                </li>
+            </ol>
+
+            <p [ngStyle]="{'display': myProp, 'color': 'red'}" (click)="myProp='none'">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aspernatur nam eveniet unde beatae, ab ducimus neque libero. Magni consequatur est voluptate ad eos repellendus quisquam atque, rerum non deleniti ut beatae eum iure laudantium eaque. Modi quas illo iusto eaque hic similique exercitationem nisi facilis ea vel aliquam ut reiciendis, sunt quisquam repudiandae laudantium odit nam quaerat? Ullam hic neque atque.</p>
+            <p [ngClass]="{'text-primary': myValue}" (click)="myValue=!myValue">
+                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Nemo recusandae temporibus esse mollitia ad est et sequi culpa sunt! Ab nostrum perferendis officiis totam amet similique laborum temporibus labore quisquam. Ad aspernatur enim, molestias fugit maxime nulla autem quisquam soluta maiores illum. Quo veritatis ex molestiae a ea, quia voluptate commodi cupiditate voluptatum repellat vero perspiciatis delectus libero corrupti. Qui nam, ex, quia debitis odit nihil aliquam tenetur earum reiciendis dicta reprehenderit labore harum voluptates obcaecati ab ratione incidunt atque nostrum illo nulla odio? Quibusdam, minus culpa atque aliquid quia nemo reprehenderit. Vel, placeat? Optio in quo animi atque delectus, cupiditate expedita non ipsam doloribus quam, quis, numquam asperiores aliquid distinctio perspiciatis saepe a! Quisquam sed tempora exercitationem quae sint.
+            </p>
+            
         </div>
     </div>
 </section>
