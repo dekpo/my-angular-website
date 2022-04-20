@@ -14,10 +14,13 @@
               <p>Max image height: {{itemInfo?.height}}</p>
               <p>Download Url: {{itemInfo?.download_url}}</p>
               <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              <a (click)="grayscale()" class="btn btn-primary">
+              <a (click)="grayscale()" class="btn btn-primary m-2">
                   <span *ngIf="!gray">Gray Scale ?</span>
                   <span *ngIf="gray">Color ?</span>
                 </a>
+            <a (click)="addBlur()" class="btn btn-primary m-2">
+                Add some blur ? {{blur}}
+            </a>
             </div>
           </div>
     </div>
