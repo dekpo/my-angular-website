@@ -33,7 +33,7 @@
             <div class="card">
 
               <a [routerLink]="'/portfolio/'+pic.id">
-                <img [src]=" 'https://picsum.photos/id/'+pic.id+'/640/480' " class="card-img-top" [alt]="'Picture from '+pic.author">
+                <img [src]=" api.imgPicsum(pic.id) " class="card-img-top" [alt]="'Picture from '+pic.author">
               </a>
 
                 <div class="card-body">

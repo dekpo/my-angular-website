@@ -33,7 +33,7 @@ export class PortfolioComponent implements OnInit {
         this.page = nb;
         break;
     }
-    this.urlPicsum = 'https://picsum.photos/v2/list?page='+this.page+'&limit=6';
+    this.urlPicsum = this.api.listPicsum(this.page);
     this.scroll.scrollToAnchor("top");
     this.api.getUrl(this.urlPicsum).subscribe(
       data => {
