@@ -13,7 +13,7 @@ export class DetailsComponent implements OnInit {
 
   itemId = '';
   itemInfo:any;
-  imgSrc = '';
+  imgSrc = './assets/images/loader.gif';
   gray = false;
   blur = 0;
 
@@ -21,6 +21,7 @@ export class DetailsComponent implements OnInit {
     this.imgSrc = 'https://picsum.photos/id/'+this.itemId+'/1280/960?';
     this.gray? this.imgSrc +='grayscale&' : null;
     this.blur>0? this.imgSrc += 'blur=' + this.blur : null;
+    console.log('There is a new source !!!:',this.imgSrc)
   }
 
   grayscale(){
