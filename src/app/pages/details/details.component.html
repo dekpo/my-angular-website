@@ -1,1 +1,24 @@
-<h1>{{itemInfo?.author}}</h1>
+
+<section class="container-fluid">
+    <div class="row">
+        <div class="col">
+            <h2>This picture is from {{itemInfo?.author}}</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="card">
+            <img class="img-fluid" [src]="imgSrc" [alt]="'Picture from '+itemInfo?.author">
+            <div class="card-body">
+              <h5 class="card-title">Author: {{itemInfo?.author}}</h5>
+              <p>Max image width: {{itemInfo?.width}}</p>
+              <p>Max image height: {{itemInfo?.height}}</p>
+              <p>Download Url: {{itemInfo?.download_url}}</p>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a (click)="grayscale()" class="btn btn-primary">
+                  <span *ngIf="!gray">Gray Scale ?</span>
+                  <span *ngIf="gray">Color ?</span>
+                </a>
+            </div>
+          </div>
+    </div>
+</section>
