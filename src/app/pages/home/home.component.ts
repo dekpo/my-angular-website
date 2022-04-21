@@ -1,4 +1,5 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { SettingsService } from '../../services/settings.service';
 
 
 @Component({
@@ -8,7 +9,9 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit, OnDestroy {
 
-  constructor() {}
+  constructor(
+    public settings:SettingsService
+    ) {}
 
 
   title = "Home";
@@ -56,6 +59,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.changeImage();
+    this.settings.displayCarousel = true;
   }
 
   ngOnDestroy(): void {

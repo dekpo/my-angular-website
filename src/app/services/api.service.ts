@@ -10,6 +10,7 @@ export class ApiService {
 
   urlChuck = 'https://api.chucknorris.io/jokes/random';
   urlPicsum = 'https://picsum.photos';
+  urlPodek = 'https://dekpo.com/api/public/pictures/list?page=4&limit=3';
 
   getUrl(url:string){
     return this.http.get(url);
