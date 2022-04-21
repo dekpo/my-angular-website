@@ -9,8 +9,8 @@ export class ApiService {
   constructor(public http:HttpClient) { }
 
   urlChuck = 'https://api.chucknorris.io/jokes/random';
-  urlPicsum = 'https://picsum.photos';
-  urlPodek = 'https://dekpo.com/api/public/pictures/list?page=4&limit=3';
+  urlPicsum ='https://picsum.photos';
+  urlPodek = 'https://dekpo.com/api/public/pictures/list?page=7&limit=3';
 
   getUrl(url:string){
     return this.http.get(url);
