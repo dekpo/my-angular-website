@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SettingsService } from '../../services/settings.service';
+import { HttpClient,HttpHeaders } from '@angular/common/http';
 
 @Component({
   selector: 'app-contact',
@@ -8,7 +9,10 @@ import { SettingsService } from '../../services/settings.service';
 })
 export class ContactComponent implements OnInit {
 
-  constructor(public settings: SettingsService) { }
+  constructor(
+    public settings: SettingsService,
+    public http:HttpClient,
+    public headers:HttpHeaders) { }
 
   firstname = '';
   lastname = '';
