@@ -14,6 +14,7 @@ import { ContactComponent } from './pages/contact/contact.component';
 import { DetailsComponent } from './pages/details/details.component';
 import { CarouselComponent } from './carousel/carousel.component';
 import { LoginComponent } from './pages/login/login.component';
+import { ThanksComponent } from './pages/thanks/thanks.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { LoginComponent } from './pages/login/login.component';
     ContactComponent,
     DetailsComponent,
     CarouselComponent,
-    LoginComponent
+    LoginComponent,
+    ThanksComponent
   ],
   imports: [
     BrowserModule,
