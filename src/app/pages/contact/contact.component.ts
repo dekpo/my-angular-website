@@ -46,7 +46,7 @@ export class ContactComponent implements OnInit {
         response => {
           console.log('Le serveur nous répond Woohoo !!!',response);
           //window.location.href = "https://google.fr";
-          this.router.navigateByUrl('/portfolio');
+          this.router.navigateByUrl('/thanks');
           // window.open('https://google.fr', '_blank');
         }
       )
