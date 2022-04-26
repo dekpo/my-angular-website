@@ -7,16 +7,25 @@
 
     <form #myForm="ngForm" (ngSubmit)="onSubmit( myForm.value )" class="row g-3">
         <div class="col-md-6">
-            <label for="firstname" class="form-label">Firstname</label>
+            <label for="firstname" class="form-label">Firstname*</label>
             <input type="text" class="form-control" id="firstname" name="firstname" [(ngModel)]="firstname" required>
+            <div *ngIf="error?.firstname" class="alert alert-danger mt-2" role="alert">
+                {{error?.firstname}}
+              </div>
         </div>
         <div class="col-md-6">
-            <label for="lastname" class="form-label">Lastname</label>
+            <label for="lastname" class="form-label">Lastname*</label>
             <input type="text" class="form-control" id="lastname" name="lastname"  [(ngModel)]="lastname" required>
+            <div *ngIf="error?.lastname" class="alert alert-danger mt-2" role="alert">
+                {{error?.lastname}}
+              </div>
         </div>
         <div class="col-12">
-            <label for="email" class="form-label">Email</label>
+            <label for="email" class="form-label">Email*</label>
             <input type="email" class="form-control" id="email" name="email" [(ngModel)]="email" placeholder="your@mail.com" required>
+            <div *ngIf="error?.email" class="alert alert-danger mt-2" role="alert">
+                {{error?.email}}
+              </div>
         </div>
         <div class="col-12">
             <label for="message" class="form-label">Message</label>
