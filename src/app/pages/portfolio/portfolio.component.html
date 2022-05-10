@@ -33,13 +33,13 @@
             <div data-aos="fade-down" class="card">
 
               <a [routerLink]="'/portfolio/'+pic.id">
-                <img [src]=" api.imgPicsum(pic.id) " class="card-img-top" [alt]="'Picture from '+pic.author">
+                <img [src]=" pic.url " class="card-img-top" [alt]="'Picture from '+pic.author">
               </a>
 
                 <div class="card-body">
                   <h5 class="card-title">Picture from {{pic.author}}</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a [href]="pic.download_url" class="btn btn-primary">Go somewhere</a>
+                  <p class="card-text text-truncate">{{pic.description}}</p>
+                  <a [href]="pic.url" class="btn btn-primary">Go somewhere</a>
                 </div>
               </div>
         </div>
